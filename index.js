@@ -1,13 +1,13 @@
 import useTracker from './hooks/useTracker'
 import useSubscription from './hooks/useSubscription'
-import useMeteorUser from './hooks/useMeteorUser'
+import useCurrentUser from './hooks/useCurrentUser'
 import useSession from './hooks/useSession'
 import useMongoFetch from './hooks/useMongoFetch'
 
 export {
   useTracker,
   useSubscription,
-  useMeteorUser,
+  useCurrentUser,
   useSession,
   useMongoFetch,
 }

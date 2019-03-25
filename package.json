@@ -23,8 +23,9 @@
     "url": "https://github.com/andruschka/react-meteor-hooks/issues"
   },
   "homepage": "https://github.com/andruschka/react-meteor-hooks#readme",
-  "dependencies": {
-    "react": "^16.8.4"
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.5"
   },
   "devDependencies": {
     "eslint": "^5.15.3",

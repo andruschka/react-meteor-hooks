@@ -2,7 +2,7 @@
 React Hooks for Meteor. It was never easier to integrate React into the Meteor stack.  
 
 ## Usage
-Just import the hooks you need from this module and you are ready to use Meteors Magic Data in React. All Meteor computations from the hooks are stopped automatically when the component is removed from the DOM.
+Just import the hooks you need from this module and you are ready to use Meteors reactive data in React. All Meteor computations from the hooks are stopped automatically when the component is removed from the DOM.
 
 ```javascript
 import React from 'react'

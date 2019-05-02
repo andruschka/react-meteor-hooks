@@ -1,5 +1,5 @@
 # react-meteor-hooks ☄️
-React Hooks for Meteor. It was never easier to integrate React into the Meteor stack.  
+React Hooks for Meteor. It was never easier to integrate React into the Meteor stack.
 
 ## Usage
 Just import the hooks you need from this module and you are ready to use Meteors reactive data in React. All Meteor computations from the hooks are stopped automatically when the component is removed from the DOM.
@@ -58,6 +58,38 @@ const UserBooks = (sortBy, showLimit) => {
 
 ```
 
+### useMethod( String: methodName [, {transform}] ) : Object
+Returns `{ isLoading, data, error, call }` object to work with meteor methods.
+Full example including `useEffect` at https://codesandbox.io/s/kj9zqqyrr
+```javascript
+import React from 'react'
+import { useMethod } from 'react-meteor-hooks'
+
+const UserBooks = () => {
+  const { isLoading, data, error, call } = useMethod('add_book', { transform: result => result.updatedAt = new Date() })
+
+  if (isLoading) return 'Adding book...'
+  if (error) return `Error: ${err.message}`
+  return (
+    <div>
+      <button
+        onClick={async () => {
+          await call('Moby Dick')
+          console.log('Meteor call completed')
+        }}
+      >
+        Add
+        </button>
+      {data && (
+        <p>New book added at {data.updatedAt.toLocalString()}. ID: {data.id}</p>
+      )}
+    </div>
+  )
+}
+
+export default UserBooks
+```
+
 ### useMongoFetch( MongoQuery: query [, Array: deps] ) : Array | Object
 Fetches a MongoQuery and returns the result.
 ```javascript
@@ -88,7 +120,7 @@ const UserBooks = (sortBy, showLimit) => {
   if (user) {
     const loading = useSubscription('user_books', showLimit)
     if (loading) {
-      // ...    
+      // ...
     } else {
       // ...
     }
@@ -107,7 +139,7 @@ Session.set('currentPage', 1)
 
 const UserBooks = (sortBy, showLimit) => {
   const page = useSession('currentPage')
-  // ...    
+  // ...
 }
 
 ```

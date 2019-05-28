@@ -5,14 +5,14 @@ export default function hook_useTracker(trackerFun, deps=[]) {
   let comp = null
   const stopComp = () => {
     comp && comp.stop()
-    comp = null 
+    comp = null
   }
 
   useEffect(() => {
     stopComp()
     Tracker.autorun((currentComp) => {
       comp = currentComp
-      setRes(trackerFun)
+      setRes(trackerFun())
     })
     return stopComp
   }, deps)

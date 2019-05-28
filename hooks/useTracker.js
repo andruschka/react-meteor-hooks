@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Tracker } from 'meteor/tracker'
 
 export default function hook_useTracker(trackerFun, deps=[]) {
   const [res, setRes] = useState(trackerFun())

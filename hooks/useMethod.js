@@ -1,5 +1,11 @@
 import { useReducer } from 'react'
 
+const initialState = {
+  isLoading: false,
+  data: null,
+  error: null,
+}
+
 export default function useMethod(methodName, { transform } = {}) {
   const [{ isLoading, error, data }, dispatch] = useReducer(
     (state, action) => {
@@ -20,15 +26,13 @@ export default function useMethod(methodName, { transform } = {}) {
           error: action.payload,
           data: null,
         }
+      case 'reset':
+        return initialState
       default:
         return state
       }
     },
-    {
-      isLoading: false,
-      data: null,
-      error: null,
-    }
+    initialState
   )
 
   const call = (...args) => {
@@ -49,5 +53,7 @@ export default function useMethod(methodName, { transform } = {}) {
     })
   }
 
-  return { isLoading, data, error, call }
+  const reset = () => dispatch({ type: 'reset'})
+
+  return { isLoading, data, error, call, reset }
 }

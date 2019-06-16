@@ -1,11 +1,12 @@
 {
   "name": "react-meteor-hooks",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "React Hooks for Meteor.",
   "main": "dist/index.js",
   "scripts": {
     "build": "parcel build index.js -t node --no-cache --no-source-maps"
   },
+  "types": "typings.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andruschka/react-meteor-hooks.git"

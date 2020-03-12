@@ -1,7 +1,9 @@
 # react-meteor-hooks ☄️
+## GETTING REBUILT RN - since hooks have changed...
 React Hooks for Meteor. It was never easier to integrate React into the Meteor stack.
 
 ## Usage
+First install Tracker `meteor add tracker`
 Just import the hooks you need from this module and you are ready to use Meteors reactive data in React. All Meteor computations from the hooks are stopped automatically when the component is removed from the DOM.
 
 ```javascript

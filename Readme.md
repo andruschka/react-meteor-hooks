@@ -1,5 +1,5 @@
 # react-meteor-hooks ☄️
-## GETTING REBUILT RN - since hooks have changed...
+## GETTING REBUILT RN - since hooks have changed... Please use react-meteor-data
 React Hooks for Meteor. It was never easier to integrate React into the Meteor stack.
 
 ## Usage

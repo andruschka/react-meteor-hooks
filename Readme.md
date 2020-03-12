@@ -90,8 +90,8 @@ const UserBooks = () => {
 export default UserBooks
 ```
 
-### useMongoFetch( MongoQuery: query [, Array: deps] ) : Array | Object
-Fetches a MongoQuery and returns the result.
+### useMongoFetch( MeteorCursor: cursor [, Array: deps] ) : Array | Object
+Fetches a MeteorCursor and returns the result.
 ```javascript
 import React from 'react'
 import { useMongoFetch, useSubscription } from 'react-meteor-hooks'

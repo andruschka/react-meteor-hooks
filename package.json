@@ -31,6 +31,6 @@
   "devDependencies": {
     "eslint": "^5.15.3",
     "eslint-config-parcellab": "^0.1.0",
-    "parcel": "^1.12.3"
+    "parcel": "^2.8.2"
   }
 }
